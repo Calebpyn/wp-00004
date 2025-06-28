@@ -1,4 +1,3 @@
-import React from "react";
 import DriveEmbed from "../common/DriveEmbed";
 
 function Menu() {

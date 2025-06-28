@@ -1,4 +1,4 @@
-import { forwardRef, type RefObject } from "react";
+import { type RefObject } from "react";
 import CALabel from "../common/CALabel";
 import AboutUs from "../Home/AboutUs";
 import HeroCarousel from "../Home/HeroCarousel";

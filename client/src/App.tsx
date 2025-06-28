@@ -1,4 +1,4 @@
-import { HashRouter, Route, Routes, useNavigate } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 
 //Components
 import Footer from "./components/common/Footer";
