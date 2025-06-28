@@ -1,68 +1,132 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import "tailwindcss";
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.tr {
+  transition: all ease 0.3s;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+.tr-slow {
+  transition: all ease 0.9s;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+@font-face {
+  font-family: "Ittrecoleta Black";
+  src: url("./assets/fonts/Ittrecoleta/Fontspring-DEMO-Ittrecoleta-black.otf")
+    format("opentype");
 }
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+@font-face {
+  font-family: "Ittrecoleta Bold";
+  src: url("./assets/fonts/Ittrecoleta/Fontspring-DEMO-Ittrecoleta-bold.otf")
+    format("opentype");
 }
-button:hover {
-  border-color: #646cff;
+@font-face {
+  font-family: "Ittrecoleta Cmp Black";
+  src: url("./assets/fonts/Ittrecoleta/Fontspring-DEMO-Ittrecoleta-cmpblack.otf")
+    format("opentype");
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+@font-face {
+  font-family: "Ittrecoleta Cmp Bold";
+  src: url("./assets/fonts/Ittrecoleta/Fontspring-DEMO-Ittrecoleta-cmpbold.otf")
+    format("opentype");
 }
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+@font-face {
+  font-family: "Ittrecoleta Cmp ExtraLight";
+  src: url("./assets/fonts/Ittrecoleta/Fontspring-DEMO-Ittrecoleta-cmpextralight.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "Ittrecoleta Cmp Light";
+  src: url("./assets/fonts/Ittrecoleta/Fontspring-DEMO-Ittrecoleta-cmplight.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "Ittrecoleta Cmp Medium";
+  src: url("./assets/fonts/Ittrecoleta/Fontspring-DEMO-Ittrecoleta-cmpmedium.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "Ittrecoleta Cmp Regular";
+  src: url("./assets/fonts/Ittrecoleta/Fontspring-DEMO-Ittrecoleta-cmpregular.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "Ittrecoleta Cnd Black";
+  src: url("./assets/fonts/Ittrecoleta/Fontspring-DEMO-Ittrecoleta-cndblack.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "Ittrecoleta Cnd Bold";
+  src: url("./assets/fonts/Ittrecoleta/Fontspring-DEMO-Ittrecoleta-cndbold.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "Ittrecoleta Cnd ExtraLight";
+  src: url("./assets/fonts/Ittrecoleta/Fontspring-DEMO-Ittrecoleta-cndextralight.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "Ittrecoleta Cnd Light";
+  src: url("./assets/fonts/Ittrecoleta/Fontspring-DEMO-Ittrecoleta-cndlight.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "Ittrecoleta Cnd Medium";
+  src: url("./assets/fonts/Ittrecoleta/Fontspring-DEMO-Ittrecoleta-cndmedium.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "Ittrecoleta Cnd Regular";
+  src: url("./assets/fonts/Ittrecoleta/Fontspring-DEMO-Ittrecoleta-cndregular.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "Ittrecoleta Cnd SemiBold";
+  src: url("./assets/fonts/Ittrecoleta/Fontspring-DEMO-Ittrecoleta-cndsemibold.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "Ittrecoleta Cnd Thin";
+  src: url("./assets/fonts/Ittrecoleta/Fontspring-DEMO-Ittrecoleta-cndthin.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "Ittrecoleta ExtraLight";
+  src: url("./assets/fonts/Ittrecoleta/Fontspring-DEMO-Ittrecoleta-extralight.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "Ittrecoleta Light";
+  src: url("./assets/fonts/Ittrecoleta/Fontspring-DEMO-Ittrecoleta-light.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "Ittrecoleta Medium";
+  src: url("./assets/fonts/Ittrecoleta/Fontspring-DEMO-Ittrecoleta-medium.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "Ittrecoleta Regular";
+  src: url("./assets/fonts/Ittrecoleta/Fontspring-DEMO-lttrecoleta-cndregular.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "Ittrecoleta SemiBold";
+  src: url("./assets/fonts/Ittrecoleta/Fontspring-DEMO-Ittrecoleta-semibold.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "Ittrecoleta-Thin";
+  src: url("./assets/fonts/Ittrecoleta/Fontspring-DEMO-Ittrecoleta-thin.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "Afacad-Regular";
+  src: url("./assets/fonts/afacad/Afacad-Regular.ttf") format("opentype");
+}
+@font-face {
+  font-family: "Afacad-Bold";
+  src: url("./assets/fonts/afacad/Afacad-Bold.ttf") format("opentype");
 }

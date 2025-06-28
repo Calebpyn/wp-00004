@@ -1,0 +1,38 @@
+{
+  "en": {
+    "translation": {
+      "home": "HOME",
+      "aboutUs": "ABOUT US",
+      "aboutUs-title": "About Us",
+      "menu": "MENU",
+      "reservations": "RESERVATIONS",
+      "e&w": "EVENTS & WORKSHOPS",
+      "faqs": "FAQ'S",
+      "location": "LOCATION",
+      "openninghours": "OPENNING HOURS",
+      "contact": "CONTACT",
+      "tuesdaytosunday": "Tuesday to Sunday",
+      "welcomeHome": "Welcome Home",
+      "aboutUs-content-1": "We're Christopher and Jessica — ",
+      "aboutUs-content-2": "Siblings and business partners behind this project that began during the pandemic, when we started selling fresh pasta from home.",
+      "aboutUs-content-3": "With no grand plans, just a genuine love for cooking and the simple intention of bringing something we truly enjoy to everyday tables.",
+      "aboutUs-content-4": "From day one, we knew one thing for sure: ",
+      "aboutUs-content-5": "Italian food shouldn't be reserved for special occasions.",
+      "aboutUs-content-6": "We envisioned something more laid-back, more honest — a space where pasta is handmade, ingredients matter, and eating well feels natural, not complicated.",
+      "aboutUs-content-7": "That's how Come a Casa came to life —",
+      "aboutUs-content-8": "like all good things: at home, with intention, and a desire to share.",
+      "aboutUs-content-9": "We specialize in fresh pasta and wood-fired pizza, with a creative approach to both our kitchen and our bar.",
+      "aboutUs-content-10": "Care to join us?",
+      "culinary-awards": "“BEST lunch IN San José del cabo 2024”"
+    }
+  },
+  "es": {
+    "translation": {
+      "home": "INCIO",
+      "AboutUs": "SOBRE NOSTOROS",
+      "menu": "MENÚ",
+      "e&w": "EVENTOS & WORKSHOPS",
+      "faqs": "FAQ'S"
+    }
+  }
+}

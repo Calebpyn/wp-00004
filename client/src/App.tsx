@@ -1,35 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { HashRouter, Route, Routes, useNavigate } from "react-router-dom";
+
+//Components
+import Footer from "./components/common/Footer";
+import Header from "./components/common/Header";
+import Home from "./components/pages/Home";
+import Menu from "./components/pages/Menu";
+import { useRef } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const aboutUsRef = useRef<HTMLDivElement>(null);
+
+  const homeRef = useRef<HTMLDivElement>(null);
+  const handleScrollToHome = () => {
+    homeRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleScrollToAboutUs = () => {
+    aboutUsRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <HashRouter>
+      <div className="bg-black w-full flex justify-center items-start hide-scrollbar">
+        <div className="max-w-[1920px] w-full bg-white relative flex flex-col hide-scrollbar">
+          <Header
+            onAboutUsClick={handleScrollToAboutUs}
+            onHomeClick={handleScrollToHome}
+          />
+          <Routes>
+            <Route
+              path="/"
+              element={<Home homeRef={homeRef} aboutUsRef={aboutUsRef} />}
+            />
+            <Route path="/menu" element={<Menu />} />
+          </Routes>
+          <Footer />
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </HashRouter>
+  );
 }
 
-export default App
+export default App;
