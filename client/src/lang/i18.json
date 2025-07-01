@@ -6,7 +6,8 @@
       "aboutUs-title": "About Us",
       "menu": "MENU",
       "reservations": "RESERVATIONS",
-      "e&w": "EVENTS & WORKSHOPS",
+      "e": "EVENTS",
+      "w": "WORKSHOPS",
       "faqs": "FAQ'S",
       "location": "LOCATION",
       "openninghours": "OPENNING HOURS",
@@ -23,7 +24,14 @@
       "aboutUs-content-8": "like all good things: at home, with intention, and a desire to share.",
       "aboutUs-content-9": "We specialize in fresh pasta and wood-fired pizza, with a creative approach to both our kitchen and our bar.",
       "aboutUs-content-10": "Care to join us?",
-      "culinary-awards": "“BEST lunch IN San José del cabo 2024”"
+      "culinary-awards": "“BEST lunch IN San José del cabo 2024”",
+      "e&w-title-1": "Private Events",
+      "e&w-title-2": "Pasta Workshops",
+      "e&w-subtitle-1": "Make memories around the table",
+      "e&w-subtitle-2": "— join a workshop or host your",
+      "e&w-subtitle-3": "own private event.",
+      "more-info": "More info",
+      "book-your-table": "Book your table"
     }
   },
   "es": {

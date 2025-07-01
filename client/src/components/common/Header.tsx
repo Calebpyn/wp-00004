@@ -40,10 +40,16 @@ const Header: React.FC<HeaderProps> = ({ onAboutUsClick, onHomeClick }) => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isOpen]);
-
+  const navigate = useNavigate();
   return (
-    <div className="fixed top-0 w-full md:h-[100px] h-[100px] bg-white flex justify-between items-center md:px-10 px-5 shadow-2xl left-0 z-[999]">
-      <span>
+    <div className="fixed top-0 w-full md:h-[100px] h-[100px] bg-white flex justify-between items-center md:px-10 px-5 shadow-2xl left-0 z-[999] ">
+      <span
+        onClick={() => {
+          navigate("/");
+          onHomeClick();
+        }}
+        className="cursor-pointer"
+      >
         <img src={logo} className="md:w-[200px] w-[120px]" />
       </span>
 
@@ -135,13 +141,33 @@ const MobileHeaderView = forwardRef<HTMLDivElement, MobileHeaderViewProps>(
         >
           {t("menu")}
         </button>
-        <button className="cursor-pointer hover:scale-110 tr">
+        <button
+          className="cursor-pointer hover:scale-110 tr"
+          onClick={() => {
+            navigate("/reservations");
+            toggleMenu();
+          }}
+        >
           {t("reservations")}
         </button>
-        <button className="cursor-pointer hover:scale-110 tr text-left">
-          {t("e&w")}
+        <button
+          className="cursor-pointer hover:scale-110 tr text-left"
+          onClick={() => {
+            navigate("/e&w");
+            toggleMenu();
+          }}
+        >
+          {t("e")}
+          <text className="font-serif"> & </text>
+          {t("e")}
         </button>
-        <button className="cursor-pointer hover:scale-110 tr">
+        <button
+          className="cursor-pointer hover:scale-110 tr"
+          onClick={() => {
+            navigate("/faqs");
+            toggleMenu();
+          }}
+        >
           {t("faqs")}
         </button>
       </div>
@@ -193,11 +219,32 @@ const DesktopHeaderView: React.FC<HeaderProps> = ({
       >
         {t("menu")}
       </button>
-      <button className="cursor-pointer hover:scale-110 tr">
+      <button
+        className="cursor-pointer hover:scale-110 tr"
+        onClick={() => {
+          navigate("/reservations");
+        }}
+      >
         {t("reservations")}
       </button>
-      <button className="cursor-pointer hover:scale-110 tr">{t("e&w")}</button>
-      <button className="cursor-pointer hover:scale-110 tr">{t("faqs")}</button>
+      <button
+        className="cursor-pointer hover:scale-110 tr"
+        onClick={() => {
+          navigate("/e&w");
+        }}
+      >
+        {t("e")}
+        <text className="font-serif"> & </text>
+        {t("e")}
+      </button>
+      <button
+        className="cursor-pointer hover:scale-110 tr"
+        onClick={() => {
+          navigate("/faqs");
+        }}
+      >
+        {t("faqs")}
+      </button>
     </span>
   );
 };
