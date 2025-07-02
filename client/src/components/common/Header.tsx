@@ -158,7 +158,7 @@ const MobileHeaderView = forwardRef<HTMLDivElement, MobileHeaderViewProps>(
           }}
         >
           {t("e")}
-          <text className="font-serif"> & </text>
+          <span className="font-serif"> & </span>
           {t("e")}
         </button>
         <button
@@ -168,7 +168,9 @@ const MobileHeaderView = forwardRef<HTMLDivElement, MobileHeaderViewProps>(
             toggleMenu();
           }}
         >
-          {t("faqs")}
+          {t("faq")}
+          <span className="font-sans">'</span>
+          {t("s")}
         </button>
       </div>
     );
@@ -243,7 +245,9 @@ const DesktopHeaderView: React.FC<HeaderProps> = ({
           navigate("/faqs");
         }}
       >
-        {t("faqs")}
+        {t("faq")}
+        <span className="font-sans">'</span>
+        {t("s")}
       </button>
     </span>
   );

@@ -4,7 +4,10 @@ import bg2 from "../../assets/home/bg2.jpg";
 import bg3 from "../../assets/home/bg3.jpg";
 import bg4 from "../../assets/home/bg4.jpg";
 import type React from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+
+import myVideo from "../../assets/home/video1.mp4";
+import { VscMute, VscUnmute } from "react-icons/vsc";
 
 function HeroCarousel() {
   const { t } = useTranslation();
@@ -55,10 +58,9 @@ function HeroCarousel() {
             className="h-full min-w-full bg-cover bg-center snap-center"
             style={{ backgroundImage: `url(${bg2})` }}
           ></div>
-          <div
-            className="h-full min-w-full bg-cover bg-center snap-center"
-            style={{ backgroundImage: `url(${bg2})` }}
-          ></div>
+          <div className="h-full min-w-full bg-cover bg-center snap-center">
+            <VideoBanner />
+          </div>
           <div
             className="h-full min-w-full bg-cover bg-center snap-center"
             style={{ backgroundImage: `url(${bg3})` }}
@@ -113,6 +115,55 @@ const Controls: React.FC<ControlsType> = ({ current, setCurrent }) => {
         }`}
         onClick={() => setCurrent(4)}
       ></span>
+    </div>
+  );
+};
+
+const VideoBanner = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isMuted, setIsMuted] = useState(true);
+
+  useEffect(() => {
+    // Autoplay al montar
+    const video = videoRef.current;
+    if (video) {
+      video.muted = true;
+      video.play().catch((err) => {
+        console.warn("Autoplay failed:", err);
+      });
+    }
+  }, []);
+
+  const handleUnmute = () => {
+    const video = videoRef.current;
+    if (video) {
+      if (isMuted) {
+        video.muted = false;
+        setIsMuted(false);
+      } else {
+        video.muted = true;
+        setIsMuted(true);
+      }
+    }
+  };
+
+  return (
+    <div className="relative w-full h-full overflow-hidden">
+      <video
+        ref={videoRef}
+        src={myVideo}
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="w-full h-full object-cover"
+      />
+      <button
+        onClick={handleUnmute}
+        className="absolute bottom-5 left-5  tr hover:scale-110 cursor-pointer text-white text-3xl px-4 py-2"
+      >
+        {isMuted ? <VscMute /> : <VscUnmute />}
+      </button>
     </div>
   );
 };
