@@ -45,7 +45,7 @@ function HeroCarousel() {
         </div>
       </div>
 
-      <div className="h-full flex overflow-x-auto hide-scrollbar snap-mandatory snap-x">
+      <div className="h-full flex overflow-x-hidden hide-scrollbar snap-mandatory snap-x">
         <div
           className={`flex h-full w-full  tr-slow`}
           style={{ transform: `translateX(-${currentPage * 100}%)` }}
