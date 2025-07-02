@@ -14,7 +14,7 @@ const Home: React.FC<HomeProps> = ({ aboutUsRef, homeRef }) => {
       <div className="w-full snap-center" ref={homeRef}>
         <HeroCarousel />
       </div>
-      <div className="w-full snap-start" ref={aboutUsRef}>
+      <div className="w-full snap-center" ref={aboutUsRef}>
         <AboutUs />
       </div>
       <div className="w-full snap-center">
