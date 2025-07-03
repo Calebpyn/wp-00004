@@ -1,5 +1,3 @@
-import DriveEmbed from "../common/DriveEmbed";
-
 import vino_menu from "../../assets/menu/vino.jpg";
 import cocteles_menu from "../../assets/menu/cocteles.jpg";
 import entradas_menu from "../../assets/menu/entradas.jpg";
