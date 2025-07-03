@@ -10,15 +10,15 @@ function Menu() {
     <div className="w-full min-h-screen pt-[100px]">
       <span className="w-full py-10 flex justify-center items-center">
         <span className="w-[90%] flex justify-between items-center">
-          <span></span>
+          <span className="hidden md:flex"></span>
           <span
             style={{ fontFamily: "Ittrecoleta Regular" }}
-            className="text-[90px]"
+            className="md:text-[90px] text-3xl"
           >
             Menu
           </span>
           <span>
-            <span className="flex gap-7 items-center">
+            <span className="flex md:gap-7 gap-5 text-sm md:text-xl items-center">
               <button
                 className={`hover:scale-120 tr cursor-pointer`}
                 onClick={() => {
