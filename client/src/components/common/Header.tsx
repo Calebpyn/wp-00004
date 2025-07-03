@@ -159,7 +159,7 @@ const MobileHeaderView = forwardRef<HTMLDivElement, MobileHeaderViewProps>(
         >
           {t("e")}
           <span className="font-serif"> & </span>
-          {t("e")}
+          {t("w")}
         </button>
         <button
           className="cursor-pointer hover:scale-110 tr"
@@ -237,7 +237,7 @@ const DesktopHeaderView: React.FC<HeaderProps> = ({
       >
         {t("e")}
         <text className="font-serif"> & </text>
-        {t("e")}
+        {t("w")}
       </button>
       <button
         className="cursor-pointer hover:scale-110 tr"

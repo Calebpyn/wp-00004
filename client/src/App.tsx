@@ -25,7 +25,7 @@ function App() {
 
   return (
     <HashRouter>
-      <div className="bg-black w-full flex justify-center items-start h-screen overflow-y-auto hide-scrollbar snap-y snap-mandatory">
+      <div className="bg-black w-full flex justify-center items-start h-screen overflow-y-auto hide-scrollbar ">
         <div className="max-w-[1920px] w-full bg-white relative flex flex-col">
           <Header
             onAboutUsClick={handleScrollToAboutUs}
@@ -44,9 +44,7 @@ function App() {
               <Route path="/reservations" element={<Reservations />} />
             </Routes>
           </div>
-          <div className="w-full snap-center">
-            <Footer />
-          </div>
+          <Footer />
         </div>
       </div>
     </HashRouter>

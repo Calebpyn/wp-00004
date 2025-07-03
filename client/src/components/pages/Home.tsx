@@ -10,7 +10,7 @@ type HomeProps = {
 
 const Home: React.FC<HomeProps> = ({ aboutUsRef, homeRef }) => {
   return (
-    <div className="w-full bg-white flex flex-col snap-y snap-mandatory h-screen overflow-y-auto hide-scrollbar">
+    <div className="w-full bg-white flex flex-col">
       <div className="w-full snap-center" ref={homeRef}>
         <HeroCarousel />
       </div>
