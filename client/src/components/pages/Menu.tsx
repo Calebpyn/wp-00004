@@ -1,15 +1,28 @@
 import vino_menu from "../../assets/menu/vino.jpg";
 import cocteles_menu from "../../assets/menu/cocteles.jpg";
 import entradas_menu from "../../assets/menu/entradas.jpg";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 function Menu() {
-  const [currentSlide, setCurrentSlide] = useState<number>(0);
+  const [_, setCurrentSlide] = useState<number>(0);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const handleSlideChange = (index: number) => {
+    setCurrentSlide(index);
+    if (scrollContainerRef.current) {
+      const container = scrollContainerRef.current;
+      const slideWidth = container.clientWidth;
+      container.scrollTo({
+        left: slideWidth * index,
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
     <div className="w-full min-h-screen pt-[100px]">
       <span className="w-full py-10 flex justify-center items-center">
-        <span className="w-[90%] flex justify-between items-center">
+        <span className="w-[90%] flex justify-between items-center px-5">
           <span className="hidden md:flex"></span>
           <span
             style={{ fontFamily: "Ittrecoleta Regular" }}
@@ -19,54 +32,38 @@ function Menu() {
           </span>
           <span>
             <span className="flex md:gap-7 gap-5 text-sm md:text-xl items-center">
-              <button
-                className={`hover:scale-120 tr cursor-pointer`}
-                onClick={() => {
-                  setCurrentSlide(0);
-                }}
-              >
-                1
-              </button>
-              <button
-                className={`hover:scale-120 tr cursor-pointer`}
-                onClick={() => {
-                  setCurrentSlide(1);
-                }}
-              >
-                2
-              </button>
-              <button
-                className={`hover:scale-120 tr cursor-pointer`}
-                onClick={() => {
-                  setCurrentSlide(2);
-                }}
-              >
-                3
-              </button>
-              <button
-                className={`hover:scale-120 tr cursor-pointer`}
-                onClick={() => {
-                  setCurrentSlide(3);
-                }}
-              >
-                4
-              </button>
+              {[0, 1, 2, 3].map((num) => (
+                <button
+                  key={num}
+                  className={`hover:scale-120 tr cursor-pointer`}
+                  onClick={() => handleSlideChange(num)}
+                >
+                  {num + 1}
+                </button>
+              ))}
             </span>
           </span>
         </span>
       </span>
 
       <span className="w-full flex justify-center items-center mb-[100px]">
-        <div className="w-[90%] overflow-x-auto flex shadow-2xl snap-mandatory snap-x hide-scrollbar">
-          <div
-            className="w-full flex tr-slow"
-            style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-          >
-            <img src={vino_menu} className="w-full snap-center" />
-            <img src={cocteles_menu} className="w-full snap-center" />
-            <img src={entradas_menu} className="w-full snap-center" />
-            <img src={entradas_menu} className="w-full snap-center" />
-          </div>
+        <div
+          ref={scrollContainerRef}
+          className="w-[90%] overflow-x-auto flex shadow-2xl snap-mandatory snap-x hide-scrollbar scroll-smooth"
+        >
+          <img src={vino_menu} className="w-full snap-center flex-shrink-0" />
+          <img
+            src={cocteles_menu}
+            className="w-full snap-center flex-shrink-0"
+          />
+          <img
+            src={entradas_menu}
+            className="w-full snap-center flex-shrink-0"
+          />
+          <img
+            src={entradas_menu}
+            className="w-full snap-center flex-shrink-0"
+          />
         </div>
       </span>
     </div>
