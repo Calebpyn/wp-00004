@@ -32,7 +32,8 @@ function Menu() {
           </span>
           <span>
             <span className="flex md:gap-7 gap-5 text-sm md:text-xl items-center">
-              {[0, 1, 2, 3].map((num) => (
+              {/* TODO: Aquí falta agregar el menú de pizzas, agregar el index */}
+              {[0, 1, 2].map((num) => (
                 <button
                   key={num}
                   className={`hover:scale-120 tr cursor-pointer`}
@@ -60,10 +61,10 @@ function Menu() {
             src={entradas_menu}
             className="w-full snap-center flex-shrink-0"
           />
-          <img
+          {/* <img
             src={entradas_menu}
             className="w-full snap-center flex-shrink-0"
-          />
+          /> */}
         </div>
       </span>
     </div>

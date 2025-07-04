@@ -1,8 +1,10 @@
 import { useTranslation } from "react-i18next";
-import logo from "../../assets/common/logo.svg";
+// import logo from "../../assets/common/logo.svg";
 import i18next, { changeLanguage } from "i18next";
 import { useNavigate } from "react-router-dom";
 import { forwardRef, useEffect, useRef, useState } from "react";
+
+import Logo from "../../assets/common/logo.svg?react";
 
 type HeaderProps = {
   onAboutUsClick: () => void;
@@ -50,7 +52,12 @@ const Header: React.FC<HeaderProps> = ({ onAboutUsClick, onHomeClick }) => {
         }}
         className="cursor-pointer"
       >
-        <img src={logo} className="md:w-[200px] w-[120px]" />
+        {/* <img
+          src={logo}
+          className="md:w-[200px] w-[120px]"
+          style={{ imageRendering: "auto" }}
+        /> */}
+        <Logo className="lg:w-[200px] w-[120px] h-auto" />
       </span>
 
       <DesktopHeaderView
@@ -185,7 +192,7 @@ const DesktopHeaderView: React.FC<HeaderProps> = ({
   const { t } = useTranslation();
   return (
     <span
-      className="md:flex items-center gap-10 text-xl hidden"
+      className="md:flex items-center md:gap-5 lg:gap-10 lg:text-xl md:text-lg hidden"
       style={{ fontFamily: "Ittrecoleta Regular" }}
     >
       <button

@@ -6,6 +6,10 @@ import { useTranslation } from "react-i18next";
 function Reservations() {
   const { t } = useTranslation();
 
+  const openWhatsApp = () => {
+    window.open("https://wa.me/5216241771536", "_blank");
+  };
+
   return (
     <div
       className="h-screen w-full flex justify-center items-center flex-col gap-10 pt-[140px] pb-10"
@@ -17,7 +21,10 @@ function Reservations() {
         <img src={asset2} className="md:h-[450px] h-[200px]" />
       </span>
       <span>
-        <button className="bg-[#1E1E1E] rounded-full md:text-[30px] text-[25px] text-white px-8 py-2 hover:scale-105 tr cursor-pointer ">
+        <button
+          className="bg-[#1E1E1E] rounded-full md:text-[30px] text-[25px] text-white px-8 py-2 hover:scale-105 tr cursor-pointer "
+          onClick={openWhatsApp}
+        >
           {t("book-your-table")}
         </button>
       </span>

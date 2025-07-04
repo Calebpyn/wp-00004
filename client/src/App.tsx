@@ -5,7 +5,7 @@ import Footer from "./components/common/Footer";
 import Header from "./components/common/Header";
 import Home from "./components/pages/Home";
 import Menu from "./components/pages/Menu";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import FAQS from "./components/pages/FAQS";
 import EnW from "./components/pages/EnW";
 import Reservations from "./components/pages/Reservations";
@@ -22,6 +22,26 @@ function App() {
   const handleScrollToAboutUs = () => {
     aboutUsRef.current?.scrollIntoView({ behavior: "smooth" });
   };
+
+  useEffect(() => {
+    const asciiArt = `
+   ██████╗ █████╗ ██╗     ███████╗██████╗ 
+  ██╔════╝██╔══██╗██║     ██╔════╝██╔══██╗
+  ██║     ███████║██║     █████╗  ██████╔╝
+  ██║     ██╔══██║██║     ██╔══╝  ██╔══██╗
+  ╚██████╗██║  ██║███████╗███████╗██████╔╝
+   ╚═════╝╚═╝  ╚═╝╚══════╝╚══════╝╚═════╝ 
+`;
+
+    console.log(
+      `%c${asciiArt}`,
+      "color: #00ffff; font-weight: bold; font-family: monospace; font-size: 12px;"
+    );
+    console.log(
+      "%c\n✉️ Contacto: calebpyn75@gmail.com",
+      "color: #888; font-size: 12px;"
+    );
+  }, []);
 
   return (
     <HashRouter>
