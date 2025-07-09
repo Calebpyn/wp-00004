@@ -1,7 +1,15 @@
 import vino_menu from "../../assets/menu/vino.jpg";
 import cocteles_menu from "../../assets/menu/cocteles.jpg";
 import entradas_menu from "../../assets/menu/entradas.jpg";
+import pizza_menu from "../../assets/menu/pizza.jpeg";
+
+import vino_menu_en from "../../assets/menu/vino_en.jpg";
+import cocteles_menu_en from "../../assets/menu/cocteles_en.jpg";
+import entradas_menu_en from "../../assets/menu/entradas_en.jpg";
+import pizza_menu_en from "../../assets/menu/pizza_en.jpeg";
+
 import { useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 function Menu() {
   const [_, setCurrentSlide] = useState<number>(0);
@@ -19,6 +27,8 @@ function Menu() {
     }
   };
 
+  const { i18n } = useTranslation();
+
   return (
     <div className="w-full min-h-screen pt-[100px]">
       <span className="w-full py-10 flex justify-center items-center">
@@ -32,8 +42,7 @@ function Menu() {
           </span>
           <span>
             <span className="flex md:gap-7 gap-5 text-sm md:text-xl items-center">
-              {/* TODO: Aquí falta agregar el menú de pizzas, agregar el index */}
-              {[0, 1, 2].map((num) => (
+              {[0, 1, 2, 3].map((num) => (
                 <button
                   key={num}
                   className={`hover:scale-120 tr cursor-pointer`}
@@ -52,19 +61,22 @@ function Menu() {
           ref={scrollContainerRef}
           className="w-[90%] overflow-x-auto flex shadow-2xl snap-mandatory snap-x hide-scrollbar scroll-smooth"
         >
-          <img src={vino_menu} className="w-full snap-center flex-shrink-0" />
           <img
-            src={cocteles_menu}
+            src={i18n.language == "en" ? vino_menu_en : vino_menu}
             className="w-full snap-center flex-shrink-0"
           />
           <img
-            src={entradas_menu}
+            src={i18n.language == "en" ? cocteles_menu_en : cocteles_menu}
             className="w-full snap-center flex-shrink-0"
           />
-          {/* <img
-            src={entradas_menu}
+          <img
+            src={i18n.language == "en" ? entradas_menu_en : entradas_menu}
             className="w-full snap-center flex-shrink-0"
-          /> */}
+          />
+          <img
+            src={i18n.language == "en" ? pizza_menu_en : pizza_menu}
+            className="w-full snap-center flex-shrink-0"
+          />
         </div>
       </span>
     </div>
