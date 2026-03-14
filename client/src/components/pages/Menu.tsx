@@ -1,12 +1,12 @@
 import vino_menu from "../../assets/menu/vino.jpg";
 import cocteles_menu from "../../assets/menu/cocteles.jpg";
 import entradas_menu from "../../assets/menu/entradas.jpg";
-import pizza_menu from "../../assets/menu/pizza.jpeg";
+import pizza_menu from "../../assets/menu/pizza.jpg";
 
 import vino_menu_en from "../../assets/menu/vino_en.jpg";
 import cocteles_menu_en from "../../assets/menu/cocteles_en.jpg";
 import entradas_menu_en from "../../assets/menu/entradas_en.jpg";
-import pizza_menu_en from "../../assets/menu/pizza_en.jpeg";
+import pizza_menu_en from "../../assets/menu/pizza_en.jpg";
 
 import { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
