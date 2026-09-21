@@ -6,8 +6,11 @@ import { useTranslation } from "react-i18next";
 function Reservations() {
   const { t } = useTranslation();
 
-  const openWhatsApp = () => {
-    window.open("https://wa.me/5216241771536", "_blank");
+  const actionButton = () => {
+    window.open(
+      "https://www.maitre360.com/reservar/come-a-casa?preview_token=Gt9G8-kAqh6EfJ0FDzJp8GyqcagWcjao&utm_source=ig&utm_medium=social&utm_content=link_in_bio",
+      "_blank",
+    );
   };
 
   return (
@@ -23,7 +26,7 @@ function Reservations() {
       <span>
         <button
           className="bg-[#1E1E1E] rounded-full md:text-[30px] text-[25px] text-white px-8 py-2 hover:scale-105 tr cursor-pointer "
-          onClick={openWhatsApp}
+          onClick={actionButton}
         >
           {t("book-your-table")}
         </button>
